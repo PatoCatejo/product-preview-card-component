@@ -1,0 +1,157 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Colors */
+
+:root {
+  /* Primary  */
+
+  --green500: hsl(158, 36%, 37%);
+  --green700: hsl(158, 42%, 18%);
+
+  /* Neutral */
+
+  --black: hsl(212, 21%, 14%);
+  --grey: hsl(228, 12%, 48%);
+  --cream: hsl(30, 38%, 92%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  background-color: var(--cream);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.prod-card {
+  background-color: var(--white);
+  border-radius: 0.625rem;
+  overflow: hidden;
+  max-width: 21.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.prod-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.prod-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.prod-category {
+  text-transform: uppercase;
+  letter-spacing: 0.3125rem;
+  color: var(--grey);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.prod-title {
+  font-family: "Fraunces", serif;
+  color: var(--black);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.prod-description {
+  color: var(--grey);
+  line-height: 1.6;
+}
+
+.price-section {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.current-price {
+  font-family: "Fraunces", serif;
+  color: var(--green500);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.old-price {
+  color: var(--grey);
+  text-decoration: line-through;
+}
+
+.btn-add {
+  background-color: var(--green500);
+  color: var(--white);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-add:hover {
+  background-color: var(--green700);
+}
+
+.btn-add img {
+  width: 0.9375rem;
+}
+
+/* Screen Reader Only */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Responsive Design */
+
+@media (min-width: 600px) {
+  .prod-card {
+    flex-direction: row;
+    max-width: 37.5rem;
+  }
+
+  .prod-image,
+  .prod-content {
+    flex: 1 1 50%;
+  }
+
+  .prod-content {
+    padding: 2rem;
+    gap: 1.2rem;
+    justify-content: center;
+  }
+
+  .prod-title {
+    font-size: 2.1rem;
+    padding: 0.5rem 0;
+  }
+}
